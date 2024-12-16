@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/wzorFragment">
+
+    <fragment
+        android:id="@+id/wzorFragment"
+        android:name="fm.mrc.mojakoszulka2.ui.WzorFragment"
+        android:label="Wzór">
+        <action
+            android:id="@+id/action_wzor_to_dane"
+            app:destination="@id/daneFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/daneFragment"
+        android:name="fm.mrc.mojakoszulka2.ui.DaneFragment"
+        android:label="Dane">
+        <action
+            android:id="@+id/action_dane_to_wysylka"
+            app:destination="@id/wysylkaFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/wysylkaFragment"
+        android:name="fm.mrc.mojakoszulka2.ui.WysylkaFragment"
+        android:label="Wysyłka">
+        <action
+            android:id="@+id/action_wysylka_to_platnosc"
+            app:destination="@id/platnoscFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/platnoscFragment"
+        android:name="fm.mrc.mojakoszulka2.ui.PlatnoscFragment"
+        android:label="Płatność" />
+
+</navigation> 
