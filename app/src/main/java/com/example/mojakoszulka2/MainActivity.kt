@@ -3,7 +3,7 @@ package com.example.mojakoszulka2
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
-import androidx.activity.ComponentActivity
+import androidx.appcompat.app.AppCompatActivity
 import androidx.activity.compose.setContent
 import androidx.core.view.WindowCompat
 import androidx.compose.foundation.layout.fillMaxSize
@@ -28,13 +28,22 @@ import com.example.mojakoszulka2.ui.screens.*
 import com.example.mojakoszulka2.util.PdfGenerator
 import dagger.hilt.android.AndroidEntryPoint
 import java.io.File
+import androidx.compose.ui.tooling.preview.Preview
+import androidx.fragment.app.FragmentActivity
+import androidx.navigation.fragment.NavHostFragment
 
 @AndroidEntryPoint
-class MainActivity : ComponentActivity() {
+class MainActivity : AppCompatActivity() {
     private lateinit var viewModel: OrderViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+
+        val navHostFragment = supportFragmentManager
+            .findFragmentById(R.id.nav_host_fragment) as NavHostFragment
+        val navController = navHostFragment.navController
+
         WindowCompat.setDecorFitsSystemWindows(window, false)
         
         viewModel = ViewModelProvider(this)[OrderViewModel::class.java]
@@ -138,6 +147,20 @@ class MainActivity : ComponentActivity() {
             startActivity(Intent.createChooser(emailIntent, "Wyślij email..."))
         } catch (e: Exception) {
             // TODO: Dodaj obsługę błędów
+        }
+    }
+
+    @Preview(showBackground = true)
+    @Composable
+    fun MainScreenPreview() {
+        Mojakoszulka2Theme {
+            // Tu możesz umieścić podgląd swojego UI
+            Surface(
+                modifier = Modifier.fillMaxSize(),
+                color = MaterialTheme.colorScheme.background
+            ) {
+                // Twój komponent
+            }
         }
     }
 } 

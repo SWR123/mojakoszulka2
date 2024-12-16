@@ -5,7 +5,10 @@ import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.tooling.preview.Preview
+import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.mojakoszulka2.viewmodel.OrderViewModel
+import com.example.mojakoszulka2.ui.theme.Mojakoszulka2Theme
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -57,5 +60,16 @@ fun WzorScreen(
         ) {
             Text("Dalej")
         }
+    }
+}
+
+@Preview(showBackground = true)
+@Composable
+fun WzorScreenPreview() {
+    Mojakoszulka2Theme {
+        WzorScreen(
+            viewModel = viewModel(),
+            onNavigateNext = {}
+        )
     }
 } 

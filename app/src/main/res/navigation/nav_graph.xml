@@ -6,7 +6,7 @@
 
     <fragment
         android:id="@+id/wzorFragment"
-        android:name="fm.mrc.mojakoszulka2.ui.WzorFragment"
+        android:name="com.example.mojakoszulka2.ui.screens.WzorFragment"
         android:label="Wzór">
         <action
             android:id="@+id/action_wzor_to_dane"
@@ -15,7 +15,7 @@
 
     <fragment
         android:id="@+id/daneFragment"
-        android:name="fm.mrc.mojakoszulka2.ui.DaneFragment"
+        android:name="com.example.mojakoszulka2.ui.screens.DaneFragment"
         android:label="Dane">
         <action
             android:id="@+id/action_dane_to_wysylka"
@@ -24,7 +24,7 @@
 
     <fragment
         android:id="@+id/wysylkaFragment"
-        android:name="fm.mrc.mojakoszulka2.ui.WysylkaFragment"
+        android:name="com.example.mojakoszulka2.ui.screens.WysylkaFragment"
         android:label="Wysyłka">
         <action
             android:id="@+id/action_wysylka_to_platnosc"
@@ -33,7 +33,7 @@
 
     <fragment
         android:id="@+id/platnoscFragment"
-        android:name="fm.mrc.mojakoszulka2.ui.PlatnoscFragment"
+        android:name="com.example.mojakoszulka2.ui.screens.PlatnoscFragment"
         android:label="Płatność" />
 
 </navigation> 
